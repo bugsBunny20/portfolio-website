@@ -5,9 +5,9 @@ import avatarImg from '../assets/images/avatar.png';
 
 const Home = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('top');
+  const [activeSection, setActiveSection] = useState('home');
 
-  const topRef = useRef();
+  const homeRef = useRef();
   const aboutRef = useRef();
   const contactRef = useRef();
 
@@ -31,13 +31,13 @@ const Home = () => {
   }, []);
 
   return (
-    <main id="top" className="min-h-screen bg-zinc-900 pt-32 px-6 md:px-20 text-white">
+    <main id="home" className="min-h-screen bg-zinc-900 pt-32 px-6 md:px-20 text-white">
       {/* Sticky Header Navigation */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={scrolled ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
         transition={{ duration: 0.4 }}
-        className="fixed top-0 left-0 w-full z-50 shadow-md bg-zinc-900/90 backdrop-blur-sm"
+        className="fixed home-0 left-0 w-full z-50 shadow-md bg-zinc-900/90 backdrop-blur-sm"
       >
         <div className="max-w-8xl mx-auto px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -49,7 +49,7 @@ const Home = () => {
             <span className="text-white font-bold">Arti Lanke</span>
           </div>
           <nav className="flex gap-4 text-sm font-medium mr-16">
-            <a href="#top" className={`transition-colors px-2 py-1 rounded ${activeSection === 'top' ? 'text-amber-500 font-bold' : 'text-cyan-400 hover:text-amber-300'}`}>Home</a>
+            <a href="#home" className={`transition-colors px-2 py-1 rounded ${activeSection === 'home' ? 'text-amber-500 font-bold' : 'text-cyan-400 hover:text-amber-300'}`}>Home</a>
             <a href="#about" className={`transition-colors px-2 py-1 rounded ${activeSection === 'about' ? 'text-amber-500 font-bold' : 'text-cyan-400 hover:text-amber-300'}`}>About Me</a>
             <a href="#contact" className={`transition-colors px-2 py-1 rounded ${activeSection === 'contact' ? 'text-amber-500 font-bold' : 'text-cyan-400 hover:text-amber-300'}`}>Contact</a>
           </nav>
@@ -57,7 +57,7 @@ const Home = () => {
       </motion.div>
 
       {/* Hero Section */}
-      <section ref={topRef} className="text-center mt-6" id="top">
+      <section ref={homeRef} className="text-center mt-6" id="home">
         <img
           src={avatarImg}
           alt="coder avatar"
@@ -69,7 +69,7 @@ const Home = () => {
         </p>
         {/* Static Navigation Buttons */}
         <nav className="flex justify-center gap-6 mt-8 text-sm font-medium">
-          <a href="#top" className={`transition-colors px-2 py-1 rounded ${activeSection === 'top' ? 'text-amber-500 font-bold' : 'text-cyan-400 hover:text-amber-300'}`}>Home</a>
+          <a href="#home" className={`transition-colors px-2 py-1 rounded ${activeSection === 'home' ? 'text-amber-500 font-bold' : 'text-cyan-400 hover:text-amber-300'}`}>Home</a>
           <a href="#about" className={`transition-colors px-2 py-1 rounded ${activeSection === 'about' ? 'text-amber-500 font-bold' : 'text-cyan-400 hover:text-amber-300'}`}>About Me</a>
           <a href="#contact" className={`transition-colors px-2 py-1 rounded ${activeSection === 'contact' ? 'text-amber-500 font-bold' : 'text-cyan-400 hover:text-amber-300'}`}>Contact</a>
         </nav>
